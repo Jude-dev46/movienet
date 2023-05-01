@@ -1,0 +1,88 @@
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+.circle-icon {
+  background-color: #fff;
+  color: #ff0000;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.list-text {
+  background-color: white;
+  color: red;
+  position: absolute;
+  font-size: 16px;
+  top: 40px;
+  left: 0;
+  padding: 3px;
+  z-index: 1;
+}
+
+.list-text-1 {
+  background-color: white;
+  color: red;
+  position: absolute;
+  font-size: 16px;
+  top: 42px;
+  left: 0;
+  padding: 3px;
+  z-index: 1;
+}
+
+.list-text-2 {
+  background-color: white;
+  color: red;
+  position: absolute;
+  font-size: 16px;
+  top: 40px;
+  left: 0;
+  padding: 3px;
+  z-index: 1;
+}
+
+.list-text-3 {
+  background-color: white;
+  color: red;
+  position: absolute;
+  font-size: 16px;
+  top: 40px;
+  left: 0;
+  padding: 3px;
+  z-index: 1;
+}
+.user {
+  color: white;
+  position: absolute;
+  font-size: 16px;
+  top: 40px;
+  left: 0;
+  padding: 3px;
+  z-index: 1;
+}
+
+.heit {
+  min-height: 575px;
+}
+
+.mobile_Nav {
+  z-index: 1;
+}
+
+/* .skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes animate-pulse {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+} */

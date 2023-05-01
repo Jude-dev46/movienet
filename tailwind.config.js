@@ -11,6 +11,8 @@ module.exports = {
   theme: {
     backgroundImage: {
       hero: "url('/images/john_wick.jpg')",
+      movieHero: "url('/images/backdrop.jpg')",
+      tvHero: "url('/images/tvbackdrop.jpg')",
     },
     fontFamily: {
       sans: ["ui-sans-serif", "system-ui"],
@@ -44,6 +46,11 @@ module.exports = {
       },
       white: "#fafafa",
       black: "#171717",
+      gray: {
+        600: "#4b5563",
+        800: "#1f2937",
+        900: "#111827",
+      },
     },
     spacing: {
       1: "8px",
@@ -66,6 +73,15 @@ module.exports = {
       18: "172px",
       19: "184px",
       20: "196px",
+      21: "200px",
+      22: "240px",
+      23: "280px",
+      24: "320px",
+      25: "380px",
+      26: "420px",
+      27: "480px",
+      28: "520px",
+      29: "540px",
     },
   },
   extend: {},

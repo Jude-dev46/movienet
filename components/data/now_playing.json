@@ -1,7 +1,7 @@
 {
   "dates": { "maximum": "2023-03-10", "minimum": "2023-01-21" },
   "page": 1,
-  "results": [
+  "now_playing": [
     {
       "adult": false,
       "backdrop_path": "/22z44LPkMyf5nyyXvv8qQLsbom.jpg",
