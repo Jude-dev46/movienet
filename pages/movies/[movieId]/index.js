@@ -49,7 +49,7 @@ export async function getStaticPaths() {
     "../../../components/data/popular_movies.json"
   );
   const { upcoming } = await import(
-    "../../../components/data/Upcomingmovies.json"
+    "../../../components/data/upcomingmovies.json"
   );
   const { weekly_movies } = await import(
     "../../../components/data/weekly_trend.json"
@@ -93,7 +93,7 @@ export async function getStaticProps(context) {
     "../../../components/data/popular_movies.json"
   );
   const { upcoming } = await import(
-    "../../../components/data/Upcomingmovies.json"
+    "../../../components/data/upcomingmovies.json"
   );
   const { weekly_movies } = await import(
     "../../../components/data/weekly_trend.json"
