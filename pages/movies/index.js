@@ -70,8 +70,6 @@ export async function getServerSideProps() {
   );
   const { top_movies } = await import("../../components/data/top_rated.json");
 
-  // console.log(now_playing);
-
   return {
     props: {
       result,

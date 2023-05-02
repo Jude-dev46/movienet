@@ -16,7 +16,7 @@ const Header = ({ data }) => {
 
   return (
     <div className="bg-hero bg-cover bg-center h-screen">
-      {!isOpen && <Nav toggleNav={showNav} disableNav={hideNav} />}
+      <Nav toggleNav={showNav} open={isOpen} onHide={hideNav} />
       {isOpen && <SideNav onHide={hideNav} />}
       <Hero data={data} />
     </div>

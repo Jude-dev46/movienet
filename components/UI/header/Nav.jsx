@@ -3,11 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
-const Nav = ({ toggleNav }) => {
+const Nav = ({ toggleNav, open, onHide }) => {
   const { user, error } = useUser();
-
   const [hover, setHover] = useState(false);
 
+  console.log(open);
   const handleMouse = () => {
     setHover(true);
   };
@@ -65,14 +65,33 @@ const Nav = ({ toggleNav }) => {
           </div>
         )}
       </div>
-      <button
-        className="flex flex-col gap-1 pr-4 md:hidden"
-        onClick={toggleNav}
-      >
-        <span className="block h-1 w-6 bg-white"></span>
-        <span className="block h-1 w-6 bg-white"></span>
-        <span className="block h-1 w-6 bg-white"></span>
-      </button>
+      {!open && (
+        <button
+          className="flex flex-col gap-1 pr-4 md:hidden"
+          onClick={toggleNav}
+        >
+          <span className="block h-1 w-6 bg-white"></span>
+          <span className="block h-1 w-6 bg-white"></span>
+          <span className="block h-1 w-6 bg-white"></span>
+        </button>
+      )}
+      {open && (
+        <button className="md:hidden">
+          <svg
+            className="h-8 w-8 text-gray-600"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            onClick={onHide}
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      )}
     </div>
   );
 };

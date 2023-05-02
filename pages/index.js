@@ -67,7 +67,7 @@ export default function Home({
 
 export async function getServerSideProps() {
   const { heromovie } = await import("../components/data/new_movie.json");
-  const { upcoming } = await import("../components/data/Upcomingmovies.json");
+  const { upcoming } = await import("../components/data/upcomingmovies.json");
   const { weekly_movies } = await import(
     "../components/data/weekly_trend.json"
   );

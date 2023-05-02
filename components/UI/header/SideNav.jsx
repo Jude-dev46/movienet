@@ -1,24 +1,8 @@
 import Link from "next/link";
 
-const SideNav = ({ onHide }) => {
+const SideNav = () => {
   return (
-    <div className="bg-red-600 md:hidden w-8/12 h-3/4 p-5">
-      <button className="ml-16">
-        <svg
-          className="h-8 w-8 text-gray-600"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          onClick={onHide}
-        >
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-      </button>
-
+    <div className={`bg-red-600 md:hidden w-full h-3/4 p-5 z-10`}>
       <div className="flex flex-col gap-4 w-full md:hidden">
         <nav>
           <ul className="flex flex-col gap-2 text-xl">
