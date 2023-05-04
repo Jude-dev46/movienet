@@ -1,8 +1,1 @@
-self.__FONT_LOADER_MANIFEST={
-  "pages": {
-    "/_app": []
-  },
-  "app": {},
-  "appUsingSizeAdjust": false,
-  "pagesUsingSizeAdjust": false
-}
+self.__FONT_LOADER_MANIFEST={pages:{"/_app":[]},app:{},appUsingSizeAdjust:!1,pagesUsingSizeAdjust:!1};

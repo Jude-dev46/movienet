@@ -1,0 +1,14 @@
+"use strict";
+exports.id = 769;
+exports.ids = [769];
+exports.modules = {
+
+/***/ 6769:
+/***/ ((module) => {
+
+module.exports = JSON.parse('{"heromovie":{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":0,"genres":[],"homepage":"","id":1095705,"imdb_id":null,"original_language":"en","original_title":"Tainted Retribution","overview":"Detective Jacks and Blake investigate Hoodie Gang","popularity":0,"poster_path":null,"production_companies":[],"production_countries":[],"release_date":"","revenue":0,"runtime":31,"spoken_languages":[],"status":"Released","tagline":"Jacks, what did you do?","title":"Tainted Retribution","video":false,"vote_average":0,"vote_count":0}}');
+
+/***/ })
+
+};
+;

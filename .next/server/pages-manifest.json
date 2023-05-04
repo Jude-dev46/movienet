@@ -1,9 +1,12 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/tvshows/[tvshowsId]": "pages/tvshows/[tvshowsId].js",
   "/api/auth/[...auth0]": "pages/api/auth/[...auth0].js",
+  "/movies": "pages/movies.js",
+  "/tvshows/[tvshowsId]": "pages/tvshows/[tvshowsId].js",
+  "/": "pages/index.js",
   "/tvshows": "pages/tvshows.js",
-  "/movies/[movieId]": "pages/movies/[movieId].js"
+  "/movies/[movieId]": "pages/movies/[movieId].js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
 }
