@@ -14,9 +14,11 @@ const TvBTS = ({ data }) => {
 
   const videos = data.results;
 
-  const filteredVideos = videos.filter((vid) => {
-    return vid.type === "Behind the Scenes";
-  });
+  const filteredVideos = videos
+    ? videos.filter((vid) => {
+        return vid.type === "Behind the Scenes";
+      })
+    : [];
 
   return (
     <div className="mb-8">

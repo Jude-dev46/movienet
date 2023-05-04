@@ -17,7 +17,7 @@ const SimilarTvshows = ({ data }) => {
 
   const sim = data.results;
 
-  const filteredData = sim.filter((d) => d.profile_path !== null);
+  const filteredData = sim ? sim.filter((d) => d.profile_path !== null) : [];
 
   return (
     <div className="mb-8">
@@ -34,7 +34,10 @@ const SimilarTvshows = ({ data }) => {
                 <h2 className="text-2xl font-sans">No Similar TvShow Found</h2>
               )}
               {filteredData.map((tv) => (
-                <div key={tv.id} className="container w-25 flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                <div
+                  key={tv.id}
+                  className="container w-25 flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                >
                   <Image
                     className="max-w-none"
                     src={base_url + "w500" + tv.backdrop_path}

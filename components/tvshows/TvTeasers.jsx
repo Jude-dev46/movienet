@@ -13,9 +13,11 @@ const TvTeaser = ({ data }) => {
 
   const videos = data.results;
 
-  const filteredVideos = videos.filter((vid) => {
-    return vid.type === "Teaser";
-  });
+  const filteredVideos = videos
+    ? videos.filter((vid) => {
+        return vid.type === "Teaser";
+      })
+    : [];
 
   return (
     <div className="mb-8">

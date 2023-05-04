@@ -24,6 +24,21 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
+    ],
+    "/movies/[movieId]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/movies/[movieId].js"
+    ],
+    "/tvshows": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/tvshows.js"
+    ],
+    "/tvshows/[tvshowsId]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/tvshows/[tvshowsId].js"
     ]
   },
   "ampFirstPages": []

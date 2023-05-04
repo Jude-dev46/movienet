@@ -20,8 +20,7 @@ const MovieDetail = ({ data, cast, watch }) => {
   }, [data, cast]);
 
   const { results } = watch;
-  console.log(results.US.flatrate);
-
+  console.log(data);
   const base_url = "https://image.tmdb.org/t/p/";
 
   return (
@@ -83,11 +82,13 @@ const MovieDetail = ({ data, cast, watch }) => {
               </div>
               <div className="h-5 flex items-baseline gap-2 mb-2">
                 <h2 className="text-xl mb-1 font-semibold">Where to watch:</h2>
-                {results.US.flatrate.map((prov) => (
-                  <p key={prov.provider_id} className="flex">
-                    {prov.provider_name}
-                  </p>
-                ))}
+                {results.US
+                  ? results.US.flatrate.map((prov) => (
+                      <p key={prov.provider_id} className="flex">
+                        {prov.provider_name}
+                      </p>
+                    ))
+                  : ""}
               </div>
             </div>
           </div>

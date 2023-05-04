@@ -17,9 +17,9 @@ const TvReviews = ({ data }) => {
 
   const reviews = data.results;
 
-  const filteredData = reviews.filter(
-    (author) => author.author_details.avatar_path !== null
-  );
+  const filteredData = reviews
+    ? reviews.filter((author) => author.author_details.avatar_path !== null)
+    : [];
 
   return (
     <div>

@@ -5,6 +5,7 @@ import Nav from "../UI/header/Nav";
 import Icons from "./ActionIcons";
 import Skeleton from "../UI/skeleton/Skeleton";
 import CastSkeleton from "../UI/skeleton/CastSkeleton";
+import Error from "next/error";
 
 const TvDetail = ({ data, cast, watch }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,8 +20,11 @@ const TvDetail = ({ data, cast, watch }) => {
     }, 5000);
   }, [data, cast]);
 
+  if (data.status_code === 34) {
+    return <Error statusCode={data.status_code} title={data.status_message} />;
+  }
+
   const { results } = watch;
-  console.log(results);
 
   const base_url = "https://image.tmdb.org/t/p/";
 
@@ -51,9 +55,9 @@ const TvDetail = ({ data, cast, watch }) => {
                 </div>
                 <p>{tvData.first_air_date}</p>
                 <i className="fa fa-dot-circle-o"></i>
-                {tvData.genres.map((gen) => (
-                  <p key={gen.id}>{gen.name}</p>
-                ))}
+                {tvData.genres
+                  ? tvData.genres.map((gen) => <p key={gen.id}>{gen.name}</p>)
+                  : ""}
               </div>
               <Icons data={tvData} />
               <div className="flex items-baseline gap-2 mb-2">
@@ -67,7 +71,7 @@ const TvDetail = ({ data, cast, watch }) => {
               <div className="flex items-baseline gap-2 mb-2">
                 <h2 className="text-xl mb-1 font-semibold">Created by:</h2>
 
-                {tvData.created_by === []
+                {tvData.created_by
                   ? "Not found"
                   : tvData.created_by.map((dir) => (
                       <p key={dir.id} className="flex">
