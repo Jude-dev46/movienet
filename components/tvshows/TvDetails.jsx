@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import TvCast from "./TvCast";
 import Nav from "../UI/header/Nav";
+import SideNav from "../UI/header/SideNav";
 import Icons from "./ActionIcons";
 import Skeleton from "../UI/skeleton/Skeleton";
 import CastSkeleton from "../UI/skeleton/CastSkeleton";
@@ -11,6 +12,15 @@ const TvDetail = ({ data, cast, watch }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [tvData, setTvData] = useState(null);
   const [tvCast, setTvCast] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const showNav = () => {
+    setIsOpen(true);
+  };
+
+  const hideNav = () => {
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -31,7 +41,8 @@ const TvDetail = ({ data, cast, watch }) => {
   return (
     <div>
       <div>
-        <Nav />
+        <Nav toggleNav={showNav} open={isOpen} onHide={hideNav} />
+        {isOpen && <SideNav open={isOpen} />}
         {isLoading ? (
           <Skeleton />
         ) : (
@@ -40,7 +51,7 @@ const TvDetail = ({ data, cast, watch }) => {
               <Image
                 src={base_url + "w500" + tvData.poster_path}
                 alt={tvData.original_name}
-                width={375}
+                width="90%"
                 height={200}
                 style={{ width: "auto", height: "auto" }}
                 className="rounded-lg md:h-full"

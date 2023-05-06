@@ -1,8 +1,9 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Cast from "./Cast";
 import Icons from "../tvshows/ActionIcons";
 import Nav from "../UI/header/Nav";
-import { useState, useEffect } from "react";
+import SideNav from "../UI/header/SideNav";
 import Skeleton from "../UI/skeleton/Skeleton";
 import CastSkeleton from "../UI/skeleton/CastSkeleton";
 
@@ -10,6 +11,15 @@ const MovieDetail = ({ data, cast, watch }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [movData, setMovData] = useState(null);
   const [movCast, setMovCast] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const showNav = () => {
+    setIsOpen(true);
+  };
+
+  const hideNav = () => {
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -20,13 +30,14 @@ const MovieDetail = ({ data, cast, watch }) => {
   }, [data, cast]);
 
   const { results } = watch;
-  console.log(data);
+
   const base_url = "https://image.tmdb.org/t/p/";
 
   return (
     <div>
       <div>
-        <Nav />
+        <Nav toggleNav={showNav} open={isOpen} onHide={hideNav} />
+        {isOpen && <SideNav open={isOpen} />}
         {isLoading ? (
           <Skeleton />
         ) : (
@@ -35,7 +46,7 @@ const MovieDetail = ({ data, cast, watch }) => {
               <Image
                 src={base_url + "w500" + movData.poster_path}
                 alt={movData.original_title}
-                width={375}
+                width="90%"
                 height={200}
                 className="rounded-lg md:h-full"
                 priority
