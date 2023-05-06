@@ -83,6 +83,9 @@ module.exports = {
       28: "520px",
       29: "540px",
     },
+    variants: {
+      translate: ["responsive", "hover", "focus", "active", "group-hover"],
+    },
   },
   extend: {},
   plugins: [],

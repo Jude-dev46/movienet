@@ -164,7 +164,7 @@ const Icons = ({ data, onAddToList }) => {
           onClick={handleBookmark}
         ></i>
         {state.bookmark ? (
-          <p className="list-text-2 w-9 rounded-md font-mono">Bookmark</p>
+          <p className="list-text-2 w-10 rounded-md font-mono">Bookmark</p>
         ) : (
           ""
         )}
@@ -178,7 +178,7 @@ const Icons = ({ data, onAddToList }) => {
           onClick={handleStar}
         ></i>
         {state.favourite ? (
-          <p className="list-text-3 w-8 rounded-md font-mono">Favourite</p>
+          <p className="list-text-3 w-9 rounded-md font-mono">Favourite</p>
         ) : (
           ""
         )}

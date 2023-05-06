@@ -8,6 +8,13 @@
   border-radius: 50%;
   cursor: pointer;
 }
+.square-icon {
+  background-color: #fff;
+  color: #ff0000;
+  padding: 8px;
+  border-radius: 25%;
+  cursor: pointer;
+}
 .icon {
   width: 24px;
   height: 24px;
@@ -68,10 +75,6 @@
 
 .heit {
   min-height: 575px;
-}
-
-.mobile_Nav {
-  z-index: 1;
 }
 
 /* .skeleton {

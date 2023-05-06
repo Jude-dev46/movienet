@@ -7,7 +7,6 @@ const Nav = ({ toggleNav, open, onHide }) => {
   const { user, error } = useUser();
   const [hover, setHover] = useState(false);
 
-  console.log(open);
   const handleMouse = () => {
     setHover(true);
   };
@@ -70,15 +69,15 @@ const Nav = ({ toggleNav, open, onHide }) => {
           className="flex flex-col gap-1 pr-4 md:hidden"
           onClick={toggleNav}
         >
-          <span className="block h-1 w-6 bg-white"></span>
-          <span className="block h-1 w-6 bg-white"></span>
-          <span className="block h-1 w-6 bg-white"></span>
+          <span className="block h-1 w-5 bg-white"></span>
+          <span className="block h-1 w-5 bg-white"></span>
+          <span className="block h-1 w-5 bg-white"></span>
         </button>
       )}
       {open && (
         <button className="md:hidden">
           <svg
-            className="h-8 w-8 text-gray-600"
+            className="h-8 w-8 text-white"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
