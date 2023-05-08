@@ -85,11 +85,17 @@ const MovieDetail = ({ data, cast, watch }) => {
               </div>
               <div className="flex items-baseline gap-2 mb-2">
                 <h2 className="text-xl mb-1 font-semibold">Languages:</h2>
-                {movData.spoken_languages.map((lan) => (
-                  <p key={lan.id} className="flex">
-                    {lan.name}
-                  </p>
-                ))}
+                {movData.spoken_languages.length < 1
+                  ? movData.spoken_languages.map((lan) => (
+                      <p key={lan.id} className="flex">
+                        {lan.name}
+                      </p>
+                    ))
+                  : movData.spoken_languages.map((lan) => (
+                      <p key={lan.id} className="flex">
+                        {lan.name[0]}
+                      </p>
+                    ))}
               </div>
               <div className="h-5 flex items-baseline gap-2 mb-2">
                 <h2 className="text-xl mb-1 font-semibold">Where to watch:</h2>
