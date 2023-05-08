@@ -1,4 +1,5 @@
 import { UserProvider } from "@auth0/nextjs-auth0/client";
+import { Analytics } from "@vercel/analytics/react";
 
 import "../styles/globals.css";
 import "../styles/UpcomingMovie.css";
@@ -9,6 +10,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <UserProvider>
         <Component {...pageProps} />
+        <Analytics />
       </UserProvider>
     </>
   );
