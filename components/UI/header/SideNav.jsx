@@ -6,7 +6,7 @@ const SideNav = ({ open }) => {
 
   return (
     <div
-      className={`bg-red-600 md:hidden w-9/12 h-3/4 p-5 z-50 ${
+      className={`bg-red-600 md:hidden w-8/12 h-full p-5 z-50 ${
         open ? "translate-x-0" : "translate-x-full"
       } fixed top-0 left-0 transition-all ease-in-out duration-500`}
     >
@@ -25,9 +25,16 @@ const SideNav = ({ open }) => {
             {/* <Link href="/">My List</Link> */}
           </ul>
         </nav>
-        <button className="bg-white h-5 px-5 mb-4 text-red-900 rounded hover:bg-red-900 hover:text-white">
-          <Link href="/api/auth/login">Sign In</Link>
-        </button>
+        {!user && (
+          <button className="bg-white h-5 px-5 mb-4 text-red-900 rounded hover:bg-red-900 hover:text-white">
+            <Link href="/api/auth/login">Sign In</Link>
+          </button>
+        )}
+        {user && (
+          <button className="bg-white h-5 px-5 mb-4 text-red-900 rounded hover:bg-red-900 hover:text-white">
+            <Link href="/api/auth/logout">Logout</Link>
+          </button>
+        )}
         <div className="flex gap-4 justify-center">
           <a href="https://www.linkedin.com/in/jude-olajumoke-002426246/">
             <i className="fa fa-linkedin-square circle-icon"></i>

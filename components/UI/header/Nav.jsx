@@ -19,7 +19,7 @@ const Nav = ({ toggleNav, open, onHide }) => {
     <div className="container flex justify-between items-center text-white mx-auto pt-4 pb-4 border-b">
       <Link
         href="/"
-        className="font-mono text-5xl text-red-600 hover:text-red-900 pl-3"
+        className="font-mono text-2xl md:text-5xl text-red-600 hover:text-red-900 pl-3"
       >
         MovieNet
       </Link>

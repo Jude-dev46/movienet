@@ -51,7 +51,7 @@ const MovieDetail = ({ data, cast, watch }) => {
               <Image
                 src={base_url + "w500" + movData.poster_path}
                 alt={movData.original_title}
-                width={400}
+                width={450}
                 height={200}
                 className="rounded-lg md:h-full"
                 priority

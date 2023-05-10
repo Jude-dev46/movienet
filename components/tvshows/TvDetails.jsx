@@ -51,7 +51,7 @@ const TvDetail = ({ data, cast, watch }) => {
               <Image
                 src={base_url + "w500" + tvData.poster_path}
                 alt={tvData.original_name}
-                width="90%"
+                width={450}
                 height={200}
                 style={{ width: "auto", height: "auto" }}
                 className="rounded-lg md:h-full"
