@@ -38,6 +38,12 @@ const TvDetail = ({ data, cast, watch }) => {
 
   const base_url = "https://image.tmdb.org/t/p/";
 
+  if (isOpen) {
+    document.body.classList.add("overflow-hidden");
+  } else {
+    document.body.classList.remove("overflow-hidden");
+  }
+
   return (
     <div>
       <div>
