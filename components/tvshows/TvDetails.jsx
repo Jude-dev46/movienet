@@ -23,12 +23,18 @@ const TvDetail = ({ data, cast, watch }) => {
   };
 
   useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
     setTimeout(() => {
       setTvData(data);
       setTvCast(cast);
       setIsLoading(false);
     }, 5000);
-  }, [data, cast]);
+  }, [data, cast, isOpen]);
 
   if (data.status_code === 34) {
     return <Error statusCode={data.status_code} title={data.status_message} />;
@@ -37,12 +43,6 @@ const TvDetail = ({ data, cast, watch }) => {
   const { results } = watch;
 
   const base_url = "https://image.tmdb.org/t/p/";
-
-  if (isOpen) {
-    document.body.classList.add("overflow-hidden");
-  } else {
-    document.body.classList.remove("overflow-hidden");
-  }
 
   return (
     <div>
