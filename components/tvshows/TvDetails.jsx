@@ -66,9 +66,11 @@ const TvDetail = ({ data, cast, watch }) => {
                 </div>
                 <p>{tvData.first_air_date}</p>
                 <i className="fa fa-dot-circle-o"></i>
-                {tvData.genres
-                  ? tvData.genres.map((gen) => <p key={gen.id}>{gen.name}</p>)
-                  : ""}
+                {tvData.genres.length >= 3 ? (
+                  <p>{tvData.genres[0].name}</p>
+                ) : (
+                  tvData.genres.map((gen) => <p key={gen.id}>{gen.name}</p>)
+                )}
               </div>
               <Icons data={tvData} />
               <div className="flex items-baseline gap-2 mb-2">
@@ -104,13 +106,15 @@ const TvDetail = ({ data, cast, watch }) => {
                   ? "Not Found"
                   : tvData.next_episode_to_air.air_date}
               </div>
-              <div className="flex items-baseline gap-2">
+              <div className="flex items-baseline gap-1">
                 <h2 className="text-xl mb-1 font-semibold">Where to watch:</h2>
-                {results.US.flatrate === null
-                  ? "Not Found"
-                  : results.US.flatrate.map((prov) => (
-                      <p key={prov.provider_id}>{prov.provider_name}</p>
-                    ))}
+                {results.US.flatrate.length >= 2 ? (
+                  <p>{results.US.flatrate[0].provider_name}</p>
+                ) : (
+                  results.US.flatrate.map((prov) => (
+                    <p key={prov.provider_id}>{prov.provider_name}</p>
+                  ))
+                )}
               </div>
             </div>
           </div>
