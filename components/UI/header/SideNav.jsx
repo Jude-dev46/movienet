@@ -6,7 +6,7 @@ const SideNav = ({ open }) => {
 
   return (
     <div
-      className={`bg-red-600 md:hidden w-8/12 h-3/4 p-5 z-50 ${
+      className={`bg-red-600 md:hidden w-9/12 h-3/4 p-5 z-50 ${
         open ? "translate-x-0" : "translate-x-full"
       } fixed top-0 left-0 transition-all ease-in-out duration-500`}
     >

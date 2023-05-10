@@ -1,9 +1,11 @@
 const Hero = ({ data }) => {
+  console.log(data);
+
   return (
     <div className="container w-full md:w-7/12 -ml-2 md:ml-5 mt-10 md:mt-17 pl-5 md:pl-4 flex flex-col gap-1 font-sans font-semibold">
       <p className="text-white md:text-2xl mb-2 animate-pulse">{data.status}</p>
       <h1 className="text-white md:text-5xl">
-        {data.title ? data.title : data.name}
+        {data.original_title ? data.original_title : data.name}
       </h1>
       <p className="text-white md:text-2xl mb-2">{data.tagline}</p>
       <p className="text-white md:text-2xl mb-2">{data.overview}</p>

@@ -64,6 +64,17 @@ const Nav = ({ toggleNav, open, onHide }) => {
           </div>
         )}
       </div>
+      {user && (
+        <Image
+          src={user.picture}
+          width={40}
+          height={20}
+          alt={user.name}
+          className="rounded-full cursor-pointer"
+          onMouseEnter={handleMouse}
+          onMouseLeave={handleRevMouse}
+        />
+      )}
       {!open && (
         <button
           className="flex flex-col gap-1 pr-4 md:hidden"

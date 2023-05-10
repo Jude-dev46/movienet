@@ -1,3 +1,4 @@
+import Error from "next/error";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Cast from "./Cast";
@@ -29,6 +30,10 @@ const MovieDetail = ({ data, cast, watch }) => {
     }, 5000);
   }, [data, cast]);
 
+  if (data.status_code === 34) {
+    return <Error statusCode={data.status_code} title={data.status_message} />;
+  }
+
   const { results } = watch;
 
   const base_url = "https://image.tmdb.org/t/p/";
@@ -46,7 +51,7 @@ const MovieDetail = ({ data, cast, watch }) => {
               <Image
                 src={base_url + "w500" + movData.poster_path}
                 alt={movData.original_title}
-                width="90%"
+                width={400}
                 height={200}
                 className="rounded-lg md:h-full"
                 priority
@@ -62,9 +67,11 @@ const MovieDetail = ({ data, cast, watch }) => {
                 <i className="fa fa-dot-circle-o"></i>
                 <p>{movData.runtime}</p>
                 <i className="fa fa-dot-circle-o"></i>
-                {movData.genres.map((gen) => (
-                  <p key={gen.id}>{gen.name}</p>
-                ))}
+                {movData.genres < 2 ? (
+                  movData.genres.map((gen) => <p key={gen.id}>{gen.name}</p>)
+                ) : (
+                  <p>{movData.genres[0].name}</p>
+                )}
               </div>
               <Icons data={movData} />
               <div className="flex items-baseline gap-2 mb-4">
@@ -85,28 +92,26 @@ const MovieDetail = ({ data, cast, watch }) => {
               </div>
               <div className="flex items-baseline gap-2 mb-2">
                 <h2 className="text-xl mb-1 font-semibold">Languages:</h2>
-                {movData.spoken_languages.length < 1
-                  ? movData.spoken_languages.map((lan) => (
-                      <p key={lan.id} className="flex">
-                        {lan.name}
-                      </p>
-                    ))
-                  : movData.spoken_languages.map((lan) => (
-                      <p key={lan.id} className="flex">
-                        {lan.name[0]}
-                      </p>
-                    ))}
+                {movData.spoken_languages.length < 2 ? (
+                  movData.spoken_languages.map((lan) => (
+                    <p key={lan.id} className="flex">
+                      {lan.name}
+                    </p>
+                  ))
+                ) : (
+                  <p className="flex">{movData.spoken_languages[0].name}</p>
+                )}
               </div>
-              <div className="h-5 flex items-baseline gap-2 mb-2">
+              {/* <div className="h-5 flex items-baseline gap-2 mb-2">
                 <h2 className="text-xl mb-1 font-semibold">Where to watch:</h2>
-                {results.US
-                  ? results.US.flatrate.map((prov) => (
+                {results.US.flatrate === null
+                  ? "NOT FOUND"
+                  : results.US.flatrate.map((prov) => (
                       <p key={prov.provider_id} className="flex">
                         {prov.provider_name}
                       </p>
-                    ))
-                  : ""}
-              </div>
+                    ))}
+              </div> */}
             </div>
           </div>
         )}

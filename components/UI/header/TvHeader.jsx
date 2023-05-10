@@ -14,6 +14,12 @@ const TvHeader = ({ data }) => {
     setIsOpen(false);
   };
 
+  if (isOpen) {
+    document.body.classList.add("overflow-hidden");
+  } else {
+    document.body.classList.remove("overflow-hidden");
+  }
+
   return (
     <div className="bg-tvHero bg-cover bg-center h-screen">
       <Nav toggleNav={showNav} open={isOpen} onHide={hideNav} />
