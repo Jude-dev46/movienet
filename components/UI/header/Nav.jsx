@@ -70,7 +70,7 @@ const Nav = ({ toggleNav, open, onHide }) => {
           width={40}
           height={20}
           alt={user.name}
-          className="rounded-full cursor-pointer"
+          className="rounded-full cursor-pointer md:hidden"
           onMouseEnter={handleMouse}
           onMouseLeave={handleRevMouse}
         />
@@ -86,7 +86,7 @@ const Nav = ({ toggleNav, open, onHide }) => {
         </button>
       )}
       {open && (
-        <button className="md:hidden">
+        <button className="-ml-12 md:hidden">
           <svg
             className="h-8 w-8 text-white"
             viewBox="0 0 24 24"
