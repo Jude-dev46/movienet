@@ -77,7 +77,7 @@ const Nav = ({ toggleNav, open, onHide }) => {
       )}
       {!open && (
         <button
-          className="flex flex-col gap-1 pr-4 md:hidden"
+          className="flex flex-col gap-1 -ml-12 pr-4 md:hidden"
           onClick={toggleNav}
         >
           <span className="block h-1 w-5 bg-white"></span>
